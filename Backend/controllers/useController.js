@@ -32,7 +32,7 @@ export async function newUrl(req, res) {
     if (isUrlExists) {
       res.json({
         message: "URL already exists",
-        link: `http://localhost:${port}/${isUrlExists.shortUrl}`,
+        link: `https://urlshortner-td2x.onrender.com/${isUrlExists.shortUrl}`,
       });
     } else {
       const urlObj = await new userModel({
@@ -42,7 +42,7 @@ export async function newUrl(req, res) {
 
       res.status(200).json({
         message: "Shortened link is generated",
-        link: `http://localhost:${port}/${id}`,
+        link: `https://urlshortner-td2x.onrender.com/${id}`,
       });
     }
   } catch (error) {
